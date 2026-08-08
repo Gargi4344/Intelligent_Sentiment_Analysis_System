@@ -10,7 +10,7 @@ class AppLogger:
         self.logger = logging.getLogger("SentimentSystem")
         self.logger.setLevel(logging.INFO)
 
-        if not self.logger.handlers:
+        if not hasattr(self, 'logger'):
             handler = logging.StreamHandler()
             formatter = logging.Formatter(
                 "%(asctime)s - %(levelname)s - %(message)s"
